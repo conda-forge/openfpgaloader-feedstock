@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: openfpgaloader
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/trabucayre/openFPGALoader/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d2d3da194e3e578ce81f1156f85c128eb6021b73b0c67bbeec9cd5d8bea35fda
+  sha256: ca965f933c52a2a9dbb318df4d4de70fac5f095a8e64523f81036ab467a4b567
 
 build:
   number: 0
