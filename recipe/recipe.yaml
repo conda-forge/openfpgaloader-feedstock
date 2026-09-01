@@ -1,0 +1,48 @@
+schema_version: 1
+
+context:
+  version: "1.1.1"
+
+package:
+  name: openfpgaloader
+  version: ${{ version }}
+
+source:
+  url: https://github.com/trabucayre/openFPGALoader/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: ca965f933c52a2a9dbb318df4d4de70fac5f095a8e64523f81036ab467a4b567
+
+build:
+  number: 1
+  skip: not linux
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - pkg-config
+    - cmake
+    - make
+  host:
+    - zlib
+    - libudev
+    - libgpiod
+    - libftdi
+    - libusb
+  run:
+    - ${{ pin_compatible("libudev") }}
+    - ${{ pin_compatible("libgpiod") }}
+    - ${{ pin_compatible("libftdi") }}
+
+tests:
+  - script:
+      - openFPGALoader --help
+
+about:
+  summary: Universal utility for programming FPGA
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/trabucayre/openFPGALoader
+
+extra:
+  recipe-maintainers:
+    - timkpaine
