@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.1.1"
+  version: "1.2.0"
 
 package:
   name: openfpgaloader
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/trabucayre/openFPGALoader/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: ca965f933c52a2a9dbb318df4d4de70fac5f095a8e64523f81036ab467a4b567
+  sha256: f75e9896bd8c6310f98ecd629ed260ecaa83329c31e0f8f831b07531aa64d30a
 
 build:
-  number: 1
+  number: 0
   skip: not linux
 
 requirements:
